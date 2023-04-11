@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+// Uses routes/employees
 const employeesRouter = require("./routes/employees");
 
 const port = process.env.PORT || 4001;

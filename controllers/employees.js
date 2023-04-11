@@ -9,18 +9,7 @@ const getAllEmployees = (req, res) => {
     return res.json(rows);
   });
 };
-// Gets specific employee by emp_no -uses 5 numbers (XXXXX)
-const showEmployee = (req, res) => {
-  let sql = "SELECT * FROM employees WHERE emp_no = ?";
-  sql = mysql.format(sql, [req.params.emp_no]);
-
-  pool.query(sql, (err, rows) => {
-    if (err) return handleSQLError(res, err);
-    return res.json(rows);
-  });
-};
 
 module.exports = {
   getAllEmployees,
-  showEmployee,
 };
