@@ -1,5 +1,5 @@
 const express = require('express')
-const employeesController = require('../controllers/salaries')
+const salariesController = require('../controllers/salaries')
 const router = express.Router()
 
-router.get('/', employeesController.getAllSalaries)
+router.get('/', salariesController.getAllSalaries)
