@@ -4,17 +4,22 @@
   "description": "Read this ENTIRE document before beginning work.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/milahose/311_wk5_both_api_hackathon.git"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/milahose/311_wk5_both_api_hackathon/issues"
   },
-  "homepage": "https://github.com/milahose/311_wk5_both_api_hackathon#readme"
+  "homepage": "https://github.com/milahose/311_wk5_both_api_hackathon#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql2": "^3.2.0",
+    "nodemon": "^2.0.22"
+  }
 }
