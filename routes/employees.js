@@ -1,9 +1,7 @@
 const express = require('express')
-
+router.getEmployeesById('/employees/:id', controller.getEmployeesById)
+const express = require('express')
+const employeesController = require('../controllers/employees')
 const router = express.Router()
 
-const controller = require('../controllers/employees')
-
-router.getEmployeesById('/employees/:id', controller.getEmployeesById)
-
-module.export = router;
+module.exports = router
