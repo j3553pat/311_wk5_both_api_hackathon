@@ -16,5 +16,5 @@ const getEmployeesById = (req, res) => {
     });
 }
 module.exports = {
-  getAllEmployees,
+  getAllEmployees, getEmployeesById
 };
