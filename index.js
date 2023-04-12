@@ -1,11 +1,12 @@
-const express = require('express');
-const { getEmployeesById } = require('./controllers/employees');
+const express = require("express");
 const app = express();
 const port = process.env.PORT || 4001;
+const routes = require("./routes");
 
-app.get('/:id', getEmployeesById)
+// body parser substitute
+app.use(express.json());
+app.use(routes);
 
+app.get("/", (req, res) => res.send("Welcome to our API!"));
 
-app.listen(port, () => {
-  console.log(`Listening on port ${port}`)
-})
+app.listen(port, () => console.log(`App listening on port ${port}!`));

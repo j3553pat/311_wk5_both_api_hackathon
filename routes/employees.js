@@ -1,11 +1,23 @@
 
 
-const express = require('express')
-const employeesController = require('../controllers/employees')
-const router = express.Router()
+const express = require("express");
+const employeesController = require("../controllers/employees");
+const router = express.Router();
+
+router.get("/", employeesController.getAllEmployees);
+
+module.exports = router;
 
 router.getEmployeesById('/employees/:id', controller.getEmployeesById)
 
 module.exports = router
 
 
+const express = require("express");
+const employeesController = require("../controllers/employees");
+const router = express.Router();
+
+router.get("/", employeesController.getAllEmployees);
+router.get("/", employeesController.getEmployeesById);
+
+module.exports = router;
