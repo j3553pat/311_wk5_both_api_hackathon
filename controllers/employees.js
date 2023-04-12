@@ -7,3 +7,10 @@ const getEmployeesByFirstName = (req, res) => {
     sql =  mysql.format(sql, [req.params.id])
 
 }
+
+const getEmployeesFirstName = (req, res) => {
+  pool.query("select first_name from employees LIMIT 1000;", (err, rows) => {
+    if (err) return handleSQLError(res, err);
+    return res.json(rows);
+  });
+}
