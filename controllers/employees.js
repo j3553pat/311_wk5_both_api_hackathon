@@ -1,12 +1,3 @@
-
-
-const getEmployeesById = (req, res) => {
-    res.json(employees.filter(user => user.id === parseInt(req.params.id)));
-}
-
-
-
-
 const mysql = require("mysql2");
 const pool = require("../sql/connection");
 const { handleSQLError } = require("../sql/error");
@@ -18,7 +9,12 @@ const getAllEmployees = (req, res) => {
     return res.json(rows);
   });
 };
-
+const getEmployeesById = (req, res) => {
+    pool.query($`SELECT * FROM employees WHERE id = ${req.params.id} LIMIT 1000`, (err, rows) => {
+        if (err) return handleSQLError(res, err);
+        return res.json(rows);
+    });
+}
 module.exports = {
   getAllEmployees,
 };
