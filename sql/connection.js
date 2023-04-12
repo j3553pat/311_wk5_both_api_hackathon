@@ -1,4 +1,5 @@
 const mysql = require("mysql2");
+//Allows the installed .env to be used
 require("dotenv").config();
 
 class Connection {
@@ -8,7 +9,7 @@ class Connection {
       this.pool = mysql.createPool({
         connectionLimit: 100,
         host: process.env.HOST,
-        user: process.env.DB_USER,
+        user: process.env.USER,
         password: process.env.PW,
         database: process.env.DB,
       });

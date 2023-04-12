@@ -1,8 +1,11 @@
 const express = require("express");
-const departmentsRouter = require("./routes/departments");
 const app = express();
-
 const port = process.env.PORT || 4001;
+const routes = require("./routes");
+
+// body parser substitute
+app.use(express.json());
+app.use(routes);
 
 app.get("/", (req, res) => res.send("Welcome to our API!"));
 
