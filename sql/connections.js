@@ -1,9 +1,11 @@
-const mysql = require('mysql2')
+const mysql = require("mysql2");
+//Allows the installed .env to be used
+require("dotenv").config();
 
 class Connection {
   constructor() {
     if (!this.pool) {
-      console.log('creating connection...')
+      console.log("creating connection...");
       this.pool = mysql.createPool({
         connectionLimit: 100,
         host: process.env.HOST,
@@ -12,10 +14,10 @@ class Connection {
         database: process.env.DB,
       });
 
-      return this.pool
+      return this.pool;
     }
 
-    return this.pool
+    return this.pool;
   }
 }
 
