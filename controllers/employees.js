@@ -10,11 +10,15 @@ const getAllEmployees = (req, res) => {
   });
 };
 const getEmployeesById = (req, res) => {
-    pool.query(`SELECT * FROM employees WHERE emp_no = ${req.params.emp_no} LIMIT 1000`, (err, rows) => {
-        if (err) return handleSQLError(res, err);
-        return res.json(rows);
-    });
-}
+  pool.query(
+    `SELECT * FROM employees WHERE emp_no = ${req.params.emp_no} LIMIT 1000`,
+    (err, rows) => {
+      if (err) return handleSQLError(res, err);
+      return res.json(rows);
+    }
+  );
+};
 module.exports = {
-  getAllEmployees, getEmployeesById
+  getAllEmployees,
+  getEmployeesById,
 };
