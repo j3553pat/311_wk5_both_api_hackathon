@@ -1,6 +1,7 @@
 const mysql = require("mysql2");
 const pool = require("../sql/connections");
 const { handleSQLError } = require("../sql/error");
+
 // const salaries = require('../data/salaries')
 
 const getAllSalaries = (req, res) => {
