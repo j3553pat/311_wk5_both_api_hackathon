@@ -1,5 +1,4 @@
 const mysql = require("mysql2");
-//Allows the installed .env to be used
 require("dotenv").config();
 
 class Connection {
