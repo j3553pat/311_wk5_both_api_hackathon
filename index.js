@@ -1,6 +1,11 @@
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 4001;
+const routes = require("./routes");
+
+// body parser substitute
+app.use(express.json());
+app.use(routes);
 
 const salaryRoutes = require('./routes/salaries')
 
