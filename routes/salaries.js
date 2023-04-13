@@ -6,6 +6,13 @@ router.get('/', salariesController.getAllSalaries)
 
 
 // Using: localhost:4001/salaries/firstname/*EMPLOYEE FIRST NAME HERE*
-router.get("/firstname/:first_name", salariesController.getSalaryByEmployeeName);
+router.get(
+  "/firstname/:first_name",
+  salariesController.getSalaryByEmployeeName
+);
+router.get(
+  "/employee-number/:id",
+  salariesController.getSalaryByEmployeeNumber
+);
 
 module.exports = router;
