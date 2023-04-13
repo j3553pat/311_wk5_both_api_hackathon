@@ -3,7 +3,7 @@ const pool = require("../sql/connections");
 const { handleSQLError } = require("../sql/error");
 
 const getEmployeesFirstName = (req, res) => {
-  pool.query("SELECT first_name FROM employees LIMIT 1000", (err, rows) => {
+  pool.query(`SELECT * FROM employees where first_name = '${req.params.first_name}' LIMIT 1`, (err, rows) => {
     if (err) return handleSQLError(res, err);
     return res.json(rows);
   });
