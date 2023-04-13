@@ -1,10 +1,10 @@
 const mysql = require('mysql2')
-const pool = require('../sql/connection')
+const pool = require('../sql/connections')
 const { handleSQLError } = require('../sql/error')
 
 
 const getEmployeesFirstName = (req, res) => {
-  pool.query("select first_name from employees LIMIT 1000;", (err, rows) => {
+  pool.query("SELECT first_name FROM employees LIMIT 1000", (err, rows) => {
     if (err) return handleSQLError(res, err);
     return res.json(rows);
   });

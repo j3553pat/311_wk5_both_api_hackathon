@@ -1,5 +1,5 @@
 const mysql = require("mysql2");
-const pool = require("../sql/connection");
+const pool = require("../sql/connections");
 const { handleSQLError } = require("../sql/error");
 
 //Gets all employees(Emp#, title, from_date, to_date) limit 1000.
